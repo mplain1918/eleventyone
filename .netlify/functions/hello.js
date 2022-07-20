@@ -1,6 +1,13 @@
-exports.handler = async function (event, context) {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: "Hello World" }),
-  };
-}
+exports.handler = async (event, context) => {
+  try {
+    return { 
+      statusCode: 200,
+      body: `Hello from a serverless function!` 
+    };
+  } catch (err) {
+    return {
+      statusCode: 500,
+      body: err.toString()
+    };
+  }
+};
