@@ -4,24 +4,24 @@ permalink: '/foo/index.html'
 layout: layouts/base.njk
 ---
 <h2>Test</h2>
-<form action="post">
-  <input type="file" id="file-selector" multiple accept=".jpg, .jpeg, .png">
-  <button>Submit</button>
+<form action="http://localhost:80/formidable" method="post" enctype="multipart/form-data">
+  <input type="file" id="file-selector" name="fileupload">
+  <button type="submit">Submit</button>
 </form>
 
 <ul class="js-file-data">
 </ul>
 
 <!-- The `multiple` attribute lets users select multiple files. -->
-<script defer>
-  document.querySelector('form').addEventListener('submit', (e) => {
+<script>
+ /* document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault()
 
     const file = document.querySelector('[type="file"]').files[0]
     const fd = new FormData()
     fd.append('file', file);
 
-    fetch('https://test-instanz-netlify-functions.netlify.app/.netlify/functions/upload', {
+    fetch('http://localhost:53374/.netlify/functions/upload', {
       method: 'post',
       headers: {
         'Accept': 'application/json',
@@ -33,7 +33,6 @@ layout: layouts/base.njk
     })
     .then(response => response.json())
     .then(response => console.log(response));
-    
   })
   
   const metadata = document.querySelector('.js-file-data');
@@ -41,7 +40,7 @@ layout: layouts/base.njk
   fileSelector.addEventListener('change', (event) => {
     const fileList = event.target.files;
     getMetadataForFileList(fileList)
-    console.log(fileList);
+    //console.log(fileList);
   });
 
   function getMetadataForFileList(fileList) {
@@ -57,5 +56,5 @@ layout: layouts/base.njk
       console.log({file, name, type, size});
     }
   }
-
+*/
 </script>

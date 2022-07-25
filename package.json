@@ -21,6 +21,7 @@
     "axios": "^0.21.1",
     "cssnano": "^4.1.10",
     "dotenv": "^8.0.0",
+    "formidable": "^2.0.1",
     "html-minifier": "^4.0.0",
     "luxon": "^1.16.0",
     "node-fetch": "^2.6.1",
